@@ -62,13 +62,23 @@
     font-size: x-large;
     font-weight: 600;
 }
-.menuitem ul li{
-  list-style-type: none;
-  display: inline;
-  margin-left: 80px;
+.menuitem li{
+    list-style-type: none;
+    display: inline-block;
+    width: 150px;
+    height: 60px;
+    line-height: 60px;
 }
 .menuitem a, .menu a{
     color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menuitem a:hover{
+    color: #ff0066;
+    border-bottom: 4px solid #ff0066;
+    box-sizing: border-box;
 }
 .user{
     display: flex;
@@ -113,6 +123,9 @@
     color: white;
     border-radius: 20px;
     margin: 60px 0px 0px 100px ;
+}
+.btnmua:hover{
+    background-image: linear-gradient(to right,#01d0ff, #ee0cd0);
 }
 .container{
     width: 100%;
@@ -183,7 +196,7 @@
     border-radius: 100% 0px 0px 100%;
 }
 .btnXem{
-    background-image: linear-gradient(to right,#FF416C, #FF4B2B);
+    background-image: linear-gradient(to right, #e5ccc3, #6047df);
     width: 250px;
     height: 75px;
     display: flex;
@@ -195,6 +208,9 @@
     color: white;
     border-radius: 20px;
     margin: 0px 0px 0px 300px ;
+}
+.btnXem:hover{
+    background-image: linear-gradient(to left,#fc210d, #f7ce38);
 }
 .footer{
     background-color: black;
@@ -251,4 +267,90 @@
     display: inline-block;
     margin-top: auto;
     margin-bottom: -5px;
+}
+.container3{
+    width: 100%;
+    height: auto;
+    padding: 40px 0 40px 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-image: linear-gradient(to right, #fe8dc58a, #fed1c78a);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.container3 h1{
+    font-size: 35px;
+}
+.product-list{
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 30px 0 0 0;
+}
+.products{
+    background: white;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+.products:hover{
+    background-color: #df88ff;
+    padding: 50px;
+}
+.product-img{
+    margin-bottom: 10px;
+}
+.product-rating{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    color: rgba(151, 151, 151, 0.75);
+}
+.name-price h4{
+    color: red;
+}
+.button-add-see{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+.btnaddcart{
+    width: 40%;
+    height: 40px;
+    background-color: #fc210d;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.btnsee{
+    width: 40%;
+    height: 40px;
+    background-color: #00ff26;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.see-all{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: rgb(177, 177, 177);
+    margin-top: 30px;
+}
+#right-img{
+    margin-left: 10px;
+    display: inline-block;
+    margin-bottom: -12px;
+}
+.container4{
+
 }
