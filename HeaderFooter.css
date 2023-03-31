@@ -5,6 +5,7 @@
 }
 .page{
     width: 100%;
+    height: auto;
 }
 .header{
     font-family: Arial, Helvetica, sans-serif;
@@ -24,11 +25,13 @@
     width: 20px;
 }
 .banner{
+    position: relative;
     background-image: url(img/camera00.jpg);
     height: 750px;
 }
 .menu{
     position: fixed;
+    z-index: 10;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -59,13 +62,23 @@
     font-size: x-large;
     font-weight: 600;
 }
-.menuitem ul li{
-  list-style-type: none;
-  display: inline;
-  margin-left: 80px;
+.menuitem li{
+    list-style-type: none;
+    display: inline-block;
+    width: 150px;
+    height: 60px;
+    line-height: 60px;
 }
 .menuitem a, .menu a{
     color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menuitem a:hover{
+    color: #ff0066;
+    border-bottom: 4px solid #ff0066;
+    box-sizing: border-box;
 }
 .user{
     display: flex;
@@ -108,6 +121,10 @@
 }
 .footerlinks a{
     color: white;
+}
+.footerlinks a:hover{
+    color: rgb(0, 255, 247);
+    text-decoration: underline;
 }
 .footerlinks{
     width: 100%;
