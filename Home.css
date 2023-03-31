@@ -243,6 +243,10 @@
 .footerlinks a{
     color: white;
 }
+.footerlinks a:hover{
+    color: rgb(0, 255, 247);
+    text-decoration: underline;
+}
 .footerlinks{
     width: 100%;
     height: auto;
@@ -352,5 +356,80 @@
     margin-bottom: -12px;
 }
 .container4{
-
+    padding: 40px 5% 40px 5%;
+    background-color: #abf0ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container4 h1{
+    margin-bottom: 50px;
+}
+.video-list{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-items: center;
+    align-items: center;
+    row-gap: 40px;
+}
+.video{
+    width: 90%;
+    display: grid;
+    grid-template-columns: auto auto;
+    color: black;
+    grid-gap: 10px;
+    padding: 15px;
+}
+.video:hover{
+    background-color: #faabe19e;
+    border-radius: 5px;
+}
+.div-imgreview{
+    position: relative;
+}
+.img-review1{
+    border-radius: 5px;
+}
+.img-review2{
+    display: none;
+}
+.div-imgreview p{
+    position: absolute;
+    color: white;
+    font-size: small;
+    border-radius: 5px;
+    background-color: black;
+    padding: 5px;
+    top: 75%;
+    left: 75%;
+}
+.img-review1:hover ~ .img-review2,.img-review2:hover{
+    display: block;
+    position: absolute;
+    opacity: 0.5;
+    top: 25%;
+    left: 40%;
+}
+.review-content{
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: justify;
+    font-family: 'Charis SIL';
+    margin-left: 10px;
+}
+.review-content p, .review-content li{
+    color: rgba(128, 128, 128, 0.5);
+    font-size: smaller;
+    font-weight: 600;
+    margin-right: 20px;
+}
+.view-time{
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
 }
