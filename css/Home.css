@@ -26,7 +26,7 @@
 }
 .banner{
     position: relative;
-    background-image: url(img/camera00.jpg);
+    background-image: url(../img/camera00.jpg);
     height: 750px;
 }
 .menu{
