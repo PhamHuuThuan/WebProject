@@ -161,7 +161,7 @@ input:focus {
     margin-top: auto;
     margin-bottom: -5px;
 }
-.container{
+.container1{
     padding: 40px 5% 40px 5%;
     background-color: rgba(0, 0, 0, 0.356);
 }
@@ -186,4 +186,52 @@ input:focus {
     border: 2px solid rgb(51, 136, 249);
     box-sizing: border-box;
     border-radius: 5px;
+}
+.center{
+    width: 100%;
+    display: flex;
+}
+.leftside{
+    width: 15%;
+    background-color: rgb(255, 128, 0);
+    height: auto;
+}
+.leftside details{
+    width: 85%;
+    margin: 30px 5% 0 10%;
+    font-family: Times, serif;
+    font-size: large;
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
+}
+.leftside details summary{
+    font-weight: bold;
+}
+input[type=checkbox]{
+    width: 24px;
+    height: 24px;
+    margin: 0 10px 0 0 ;
+}
+.checkbox-form{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 30px 0 0 15px;
+}
+.price-select select{
+    width: 75px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 20px 5px 0 5px;
+}
+.price-select button{
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    margin: 20px 0 0 10px;
+    border: none;
+    background-color: green;
+    color: white;
+    font-weight: bold;
 }
