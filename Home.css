@@ -383,7 +383,7 @@
     padding: 15px;
 }
 .video:hover{
-    background-color: #faabe19e;
+    background-color: #bababa9e;
     border-radius: 5px;
 }
 .div-imgreview{
@@ -432,4 +432,30 @@
     width: 100%;
     display: flex;
     margin-bottom: 20px;
+}
+.container5{
+    padding: 40px 5% 40px 5%;
+    background-color: rgba(0, 0, 0, 0.356);
+}
+.producer-list{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: white;
+    border-radius: 5px;
+}
+.producer{
+    width: 185px;
+    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 5px 15px 5px;
+}
+.producer:hover{
+    border: 2px solid rgb(51, 136, 249);
+    box-sizing: border-box;
+    border-radius: 5px;
 }
