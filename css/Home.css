@@ -80,6 +80,20 @@
     border-bottom: 4px solid #ff0066;
     box-sizing: border-box;
 }
+.search-form{
+    height: 80%;
+    background-color: white;
+    padding: 10px 10px 10px 10px;
+    border-radius: 20px;
+}
+.txtsearch{
+    margin-left: 5px;
+    font-size: medium;
+    border: none;
+}
+input:focus {
+    outline: none;
+ }
 .user{
     display: flex;
     justify-content: space-around;
