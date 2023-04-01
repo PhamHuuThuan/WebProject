@@ -193,7 +193,7 @@ input:focus {
 }
 .leftside{
     width: 15%;
-    background-color: rgb(255, 128, 0);
+    background-color: rgba(255, 128, 0, 0.568);
     height: auto;
 }
 .leftside details{
