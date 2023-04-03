@@ -226,18 +226,21 @@ input:focus {
     text-align: center;
     font-size: 17px;
     margin-right: 40px;
+    margin-top: 20px;
 }
 .link-button{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 20px;
     width: 100%;
 }
 .link-button a{
     font-weight: bold;
     color: #ff0066;
+}
+.link-button p{
+    margin-top: 20px;
 }
 .button{
     width: 100%;
