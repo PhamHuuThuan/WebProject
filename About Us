@@ -1,0 +1,61 @@
+# WebProject
+Bài tập lớn môn Hệ thống và công nghệ WEB
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .about {
+  background-color: #f5f5f5;
+  padding: 80px 0;
+}
+
+.about .section-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.about .section-subtitle {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 60px;
+}
+
+.about img {
+  width: 50%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.about p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+    </style>
+    <section class="about">
+        <div class="container">
+          <h2 class="section-title">About Us</h2>
+          <p class="section-subtitle">Learn about our company</p>
+          <div class="row">
+            <div class="col-6">
+              <img src="6080892_44.jpg" alt="About Us" class="img-fluid">
+            </div>
+            <div class="col-6">
+              <p>Chúng tôi là một nhóm các nhiếp ảnh gia đam mê tin tưởng vào việc cung cấp máy ảnh và thiết bị chất lượng cao để ghi lại những khoảnh khắc quý giá của cuộc sống. Công ty chúng tôi đã hoạt động kinh doanh hơn 10 năm và chúng tôi đã tạo dựng được danh tiếng nhờ cung cấp những sản phẩm tốt nhất với giá cả cạnh tranh.</p>
+              <p>Chúng tôi cam kết cung cấp dịch vụ khách hàng đặc biệt và đội ngũ chuyên gia giàu kinh nghiệm của chúng tôi luôn sẵn sàng tư vấn và hướng dẫn cho khách hàng. Cho dù bạn là một nhiếp ảnh gia chuyên nghiệp hay mới bắt đầu, chúng tôi có mọi thứ bạn cần để chụp được những bức ảnh tuyệt đẹp.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+  
