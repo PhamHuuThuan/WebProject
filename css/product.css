@@ -25,7 +25,10 @@
     width: 20px;
 }
 .search-form{
-    height: 80%;
+    height: 60%;
+    width: 15%;
+    overflow: auto;
+    display: flex;
     background-color: white;
     padding: 10px 10px 10px 10px;
     border-radius: 20px;
@@ -162,7 +165,7 @@ input:focus {
     margin-bottom: -5px;
 }
 .container1{
-    padding: 40px 5% 40px 5%;
+    padding: 20px 2.5% 20px 2.55%;
     background-color: rgba(0, 0, 0, 0.356);
 }
 .producer-list{

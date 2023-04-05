@@ -21,8 +21,8 @@
 }
 #icon{
     margin-top: 5px;
-    height: 20px;
-    width: 20px;
+    height: 16px;
+    width: 16px;
 }
 .banner{
     position: relative;
@@ -32,31 +32,30 @@
 .menu{
     position: fixed;
     z-index: 10;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1.5fr 3fr 2fr 1fr;
     background-color: rgba(113, 224, 255, 0.65);
     border-radius: 50px;
     margin: 20px 40px 0 40px;
     width: 95%;
+}
+.buttonmenu{
+    display: none;
 }
 .logo{
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 40px;
-    width: 250px;
 }
 #imglogo{
-    width: 50px;
+    width: 30px;
     height: auto;
     border-radius: 50px;
 }
 .menuitem{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 700px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr 1.5fr;
     height: 60px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: x-large;
@@ -65,7 +64,6 @@
 .menuitem li{
     list-style-type: none;
     display: inline-block;
-    width: 150px;
     height: 60px;
     line-height: 60px;
 }
@@ -81,12 +79,15 @@
     box-sizing: border-box;
 }
 .search-form{
-    height: 80%;
+    width: 70%;
+    height: 20px;
     background-color: white;
     padding: 10px 10px 10px 10px;
     border-radius: 20px;
+    margin: auto;
 }
 .txtsearch{
+    width: 70%;
     margin-left: 5px;
     font-size: medium;
     border: none;
@@ -98,7 +99,6 @@ input:focus {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 150px;
     height: 60px;
 }
 .title{
@@ -472,4 +472,68 @@ input:focus {
     border: 2px solid rgb(51, 136, 249);
     box-sizing: border-box;
     border-radius: 5px;
+}
+@media (max-width: 1200px){
+    .menu{
+        grid-template-columns: 2fr 3fr 2fr 1fr;
+    }
+    .logo{
+        font-size: 15px;
+    }
+    .menuitem{
+        font-size: 20px;
+        display: grid;
+    }
+}
+@media (max-width: 975px){
+    .menu{
+        grid-template-columns: 1fr 5fr 4fr 1fr;
+        margin: 10px 0 0 0;
+        font-size: 14px;
+        border-radius: 0;
+        width: 100%;
+    }
+    .menu a{
+        padding-left: 10px;
+    }
+    .menuitem{
+        display: none;
+    }
+    .logo{
+        font-size: 12px;
+    }
+    .buttonmenu{
+        padding-left: 20px;
+        display: inline-block;
+        margin: auto;
+    }
+    .menuitem{
+        position: absolute;
+        left: 0;
+        top: 60px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        width: 40%;
+        height: auto;
+        background-color: rgba(113, 224, 255, 0.65);
+        border-radius: 0 0 5px 0;
+    }
+    .menuitem li{
+        list-style-type: none;
+        display: block;
+        text-align: start;
+        height: 60px; 
+        line-height: 60px;
+    }
+    .menuitem a{
+        color: rgb(0, 0, 0);
+        padding-left: 40px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+    .menuitem{
+        display: none;
+    }
 }
