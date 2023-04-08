@@ -238,3 +238,81 @@ input[type=checkbox]{
     color: white;
     font-weight: bold;
 }
+.rightside{
+    width: 75%;
+    padding: 50px 5%;
+}
+.sale-off p{
+    width: 95%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: red;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 25px;
+    padding-left: 1%;
+    border-left: 10px solid rgb(107, 103, 103);
+    box-sizing: border-box;
+}
+.product-list{
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 30px 0 0 0;
+}
+.products{
+    background: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 10px gray;
+}
+.products:hover{
+    border: 3px solid rgb(225, 96, 96);
+}
+.product-img{
+    margin-bottom: 10px;
+}
+.product-rating{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    color: rgba(151, 151, 151, 0.75);
+}
+.name-price h4{
+    color: red;
+}
+.button-add-see{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+.btnaddcart{
+    width: 40%;
+    height: 40px;
+    background-color: #fc210d;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.btnsee{
+    width: 40%;
+    height: 40px;
+    background-color: #00ff26;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
