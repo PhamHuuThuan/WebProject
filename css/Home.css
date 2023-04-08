@@ -27,6 +27,7 @@
 .banner{
     position: relative;
     background-image: url(../img/camera00.jpg);
+    width: 100%;
     height: 750px;
 }
 .menu{
@@ -106,10 +107,8 @@ input:focus {
     z-index: 5;
     top: 150px;
     left: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: start;
+    display: grid;
+    grid-auto-rows: 2fr 3fr 1fr;
     font-family: Arial, Helvetica, sans-serif;
     width: 500px;
     height: 500px;
@@ -127,12 +126,12 @@ input:focus {
 }
 .btnmua{
     background-color: red;
-    width: 200px;
-    height: 75px;
+    width: 256px;
+    height: 64px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 40px;;
+    font-size: 32px;;
     font-family: Georgia, 'Times New Roman', Times, serif, Tahoma, Geneva, Verdana, sans-serif;
     color: white;
     border-radius: 20px;
@@ -148,20 +147,19 @@ input:focus {
     width: 100%;
     height: auto;
     background-color: white;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
 }
 .content-1{
-    width: 20%;
-    margin: 0px 0px 50px 0px;
+    width: 60%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: justify;
+    margin: 50px auto;
 }
 #container1-icon{
     display: block;
-    margin: 50px auto 20px auto;
+    margin: 0 auto 20px auto;
 }
 .container2{
     display: flex;
@@ -235,18 +233,18 @@ input:focus {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 350px;
+    height: auto;
 }
 .footer-container{
-    display: flex;
-    justify-content: space-around;
-    text-align: start;
-    margin-top: 50px;
-    width: 90%;
-    height: auto
+    display: grid;
+    grid-template-columns: 0.8fr 1fr 1.5fr 0.8fr;
+    margin: 0 10%;
+    width: 80%;
+    height: auto;
 }
 .footer-container h3{
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+    margin-top: 50px;
 }
 .footerlinks li{
     color: white;
@@ -272,13 +270,15 @@ input:focus {
 .contact{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
     align-items: start;
-    width: 25%;
-    height: 200px;
+    width: 75%;
 }
 .copyright{
     margin-bottom: 15px;
+    margin-top: 30px;
+    font-size: small;
+    display: block;
 }
 #iconfooter{
     margin: 0px 10px 0px 0px ;
@@ -535,5 +535,41 @@ input:focus {
     }
     .menuitem{
         display: none;
+    }
+    .banner{
+        background-image: url(../img/camera001.jpg);
+    }
+    .title{
+        top: 15%;
+        left: 10%;
+        grid-auto-rows: 2fr 6fr 2fr;
+        width: 90%;
+    }
+    .titlehead{
+        width: 100%;
+        font-size: 24px;
+        text-align: center;
+    }
+    .titlecontent{
+        width: 75%;
+        font-size: 18px;
+        text-shadow: 1px 1px 1px white, -1px -1px 1px white;
+    }
+    .btnmua{
+        width: 75%;
+        margin: 0;
+    }
+    .container1{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    .footer-container{
+        font-size: small;
+        display: grid;
+        width: 100%;
+        height: auto;
+        grid-template-columns: 5fr 3fr;
+        grid-template-rows: auto auto;
+        padding-left: 20px;
     }
 }
