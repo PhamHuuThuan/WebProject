@@ -52,18 +52,19 @@
                 <h2>LOGIN</h2>
                 <br/>
                 <div class="form">
-                    <input type="email" name="email" class="textbox" placeholder=" " />
-                    <label class="form_label">Email</label>
+                    <input type="email" name="email" id="mail" class="textbox" placeholder=" " onblur="checkMail()"/>
+                    <label class="form_label" >Email</label><span id="mail_error" style="color: red; font-style: italic;"></span>
                 </div>
                 <br/>
                 <div class="form">
                     <input
                         type="password"
                         name="password"
+                        id = "pass"
                         class="textbox"
                         placeholder=" "
-                    />
-                    <label class="form_label">Password</label>
+                    onblur="checkPass()"/>
+                    <label class="form_label" id="passtitle">Password</label><span id="pass_error" style="color: red; font-style: italic;"></span>
                 </div>
                 <div class="orlogin">
                     <p>or</p>
@@ -127,7 +128,41 @@
         </div>
     </div>
     <script>
-
+        var $ = document;
+            function checkMail(){
+                var mail = $.getElementById("mail").value;
+                const regularMail = /\S+@\S+\.\S+/g;
+                let rs = regularMail.test(mail);
+                if(mail===""){
+                    $.getElementById("mail_error").innerHTML = "Email khong duoc de trong!";
+                    $.getElementById("mail").style.borderColor = "red";
+                }
+                else if(!rs){
+                    $.getElementById('mail_error').innerHTML = "Email khong hop le! VD: example@example.com";
+                    $.getElementById("mail").style.borderColor = "red";
+                }else {
+                        $.getElementById("mail_error").innerHTML = "";
+                        $.getElementById("mail").style.borderColor = "";
+                    }
+                
+            }
+            function checkPass(){
+                var pass = $.getElementById("pass").value;
+                const regularPass = /^\w{4,8}$/;
+                let rs = regularPass.test(pass);
+                if(pass===""){
+                    $.getElementById("pass_error").innerHTML = "Password khong duoc de trong!";
+                    $.getElementById("pass").style.borderColor = "red";
+                }
+                else if(!rs){
+                    $.getElementById('pass_error').innerHTML = "Password khong hop le! Tu 4-8 ki tu";
+                    $.getElementById("pass").style.borderColor = "red";
+                }else {
+                        $.getElementById("pass_error").innerHTML = "";
+                        $.getElementById("pass").style.borderColor = "";
+                    }
+                
+            }
     </script>
 </body>
 </html>
