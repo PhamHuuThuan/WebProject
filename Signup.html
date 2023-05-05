@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="Js/jquery-3.6.4.min.js"></script>
+    <script src="Js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/login.css">
+    <script src="Js/javascript.js"></script>
     <title>Sign up</title>
 </head>
 <body>
@@ -52,40 +56,47 @@
                 <h2>SIGN UP</h2>
                 <div class="form">
                     <input
+                        id="username"
                         type="text"
                         name="name"
                         class="textbox"
                         placeholder=" "
                         autocomplete="off"
+                        onblur="checkUserName()"
                     />
                     <label class="form_label">Enter Name</label>
+                    <span id="name_error" style="color: red; font-style: italic;"></span>
                 </div>
                 <br/>
                 <div class="form">
-                    <input type="email" name="email" class="textbox" placeholder=" " />
+                    <input id="mail" type="email" name="email" class="textbox" placeholder=" " onblur="checkMail()"/>
                     <label class="form_label">Email</label>
+                    <span id="mail_error" style="color: red; font-style: italic;"></span>
                 </div>
                 <br/>
                 <div class="form">
                     <input
+                        id="pass"
                         type="password"
                         name="password"
                         class="textbox"
                         placeholder=" "
-                    />
+                        onblur="checkPass()"/>
                     <label class="form_label">Password</label>
+                    <span id="pass_error" style="color: red; font-style: italic;"></span>
                 </div>
                 <br/>
                 <div class="form">
-                    <input type="text" name="number" class="textbox" placeholder=" " />
+                    <input id="phoneNB" type="text" name="number" class="textbox" placeholder=" " onblur="checkPhoneNB()"/>
                     <label class="form_label">Phone Number</label>
+                    <span id="phone_error" style="color: red; font-style: italic;"></span>
                 </div>
                 <div class="term-check">
                     <input type="checkbox" id="checkbox">
                     <span>I agree <a href="">the terms</a> of the site.</span>
                 </div>
                 <div class="link-button">
-                    <input type="submit" value="Sign up" class="btn" />
+                    <input id="btnSignup" type="submit" value="Sign up" class="btn" />
                     <p>Đã có tài khoản <a href="Login.html">Đăng nhập</a>!</p>
                 </div>
               </div>
@@ -132,8 +143,5 @@
             </div>
         </div>
     </div>
-    <script>
-
-    </script>
 </body>
 </html>
