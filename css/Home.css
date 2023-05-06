@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     text-decoration: none;
+    box-sizing: border-box;
 }
 .page{
     width: 100%;
@@ -32,14 +33,12 @@
 }
 .menu{
     position: fixed;
-    top: 0;
-    right: 0;
     z-index: 10;
     display: grid;
     grid-template-columns: 1.5fr 3fr 2fr 1fr;
     background-color: rgba(113, 224, 255, 0.65);
     border-radius: 50px;
-    margin: 50px 2.5% 0 2.5%;
+    margin: 20px 2.5% 0 2.5%;
     width: 95%;
     box-sizing: border-box;
 }
@@ -83,16 +82,15 @@
     box-sizing: border-box;
 }
 .search-form{
-    width: 70%;
-    height: 20px;
+    width: 90%;
+    height: 40px;
     background-color: white;
-    padding: 10px 10px 10px 10px;
+    padding: 10px 5% 10px 5%;
     border-radius: 20px;
     margin: auto;
 }
 .txtsearch{
     width: 70%;
-    margin-left: 5px;
     font-size: medium;
     border: none;
 }
@@ -478,7 +476,6 @@ input:focus {
 @media (max-width: 1200px){
     .menu{
         grid-template-columns: 2fr 3fr 2fr 1fr;
-        width: 100%;
     }
     .logo{
         font-size: 15px;
@@ -537,7 +534,7 @@ input:focus {
 @media (max-width: 768px){
     .menu{
         grid-template-columns: 1fr 5fr 4fr 1fr;
-        margin: 50px 0 0 0;
+        margin: 10px 0 0 0;
         font-size: 14px;
         border-radius: 0;
         width: 100%;
@@ -659,7 +656,6 @@ input:focus {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 90%;
     }
     .container4 h1{
         margin-bottom: 40px;

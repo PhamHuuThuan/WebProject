@@ -120,4 +120,34 @@ var user;
                menu = false;
             }   
         }
-            
+        document.addEventListener('DOMContentLoaded', function() {
+            var startX, startY, endX, endY;
+            var minDistance = 100; // Khoảng cách tối thiểu để xem như là một lượt vuốt
+        
+            document.addEventListener('touchstart', function(e) {
+                startX = e.touches[0].clientX;
+                startY = e.touches[0].clientY;
+            });
+        
+            document.addEventListener('touchmove', function(e) {
+                endX = e.touches[0].clientX;
+                endY = e.touches[0].clientY;
+            });
+        
+            document.addEventListener('touchend', function() {
+                if (startX && endX) {
+                    var distanceX = endX - startX;
+                    var distanceY = endY - startY;
+        
+                    if (Math.abs(distanceX) > Math.abs(distanceY)) {
+                        if (distanceX > minDistance) {
+                            document.getElementsByClassName('leftside')[0].style.left = '0';
+                        } else if (distanceX < -minDistance) {
+                            document.getElementsByClassName('leftside')[0].style.left = '-75%';
+                        }
+                    }
+                }
+        
+                startX = startY = endX = endY = null;
+            });
+        });
