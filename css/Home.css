@@ -32,13 +32,16 @@
 }
 .menu{
     position: fixed;
+    top: 0;
+    right: 0;
     z-index: 10;
     display: grid;
     grid-template-columns: 1.5fr 3fr 2fr 1fr;
     background-color: rgba(113, 224, 255, 0.65);
     border-radius: 50px;
-    margin: 20px 40px 0 40px;
+    margin: 50px 2.5% 0 2.5%;
     width: 95%;
+    box-sizing: border-box;
 }
 .buttonmenu{
     display: none;
@@ -165,7 +168,6 @@ input:focus {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 500px;
     background-color: rgb(178, 255, 202);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -476,6 +478,7 @@ input:focus {
 @media (max-width: 1200px){
     .menu{
         grid-template-columns: 2fr 3fr 2fr 1fr;
+        width: 100%;
     }
     .logo{
         font-size: 15px;
@@ -484,11 +487,57 @@ input:focus {
         font-size: 20px;
         display: grid;
     }
+    .product-list{
+        width: 90%;
+        display: grid;
+        grid-template-columns: auto auto;
+        margin: 30px 0 0 0;
+    }
+    .video-list{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+        justify-items: center;
+        align-items: center;
+        row-gap: 40px;
+    }
+    #cameraimg{
+        box-sizing: border-box;
+        width: 100%;
+        min-height: 480px;
+    }
+    .container2{
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        height: auto;
+        width: 100%;
+    }
+    .btnXem{
+        margin: 0px 0px 0px 40% ;
+        width: 150px;
+        height: 50px;
+        font-size: 20px;
+    }
+    .eosr5{
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: start;
+        text-align: justify;
+        line-height: 2;
+        width: 80%;
+    }
+    .menuitem{
+        font-size: 18px;
+        display: grid;
+    }
+    .logo{
+        font-size: 12px;
+    }
 }
-@media (max-width: 975px){
+@media (max-width: 768px){
     .menu{
         grid-template-columns: 1fr 5fr 4fr 1fr;
-        margin: 10px 0 0 0;
+        margin: 50px 0 0 0;
         font-size: 14px;
         border-radius: 0;
         width: 100%;
@@ -500,7 +549,7 @@ input:focus {
         display: none;
     }
     .logo{
-        font-size: 12px;
+        font-size: 10px;
     }
     .buttonmenu{
         padding-left: 20px;
@@ -571,5 +620,124 @@ input:focus {
         grid-template-columns: 5fr 3fr;
         grid-template-rows: auto auto;
         padding-left: 20px;
+        margin: 0;
+    }
+    .container2{
+        display: grid;
+        grid-template-columns: 3fr 4fr;
+    }
+    .container2 li{
+        list-style-image: url(img/solutions.png);
+        float: left;
+        font-style: italic;
+        margin-left: 30px;
+    }
+    .eosr5{
+        margin: 0 0 0 10%;
+    }
+    .container2 h3{
+        margin-left: 10%;
+    }
+    #cameraimg{
+        box-sizing: border-box;
+        width: 100%;
+        min-height: 480px;
+    }
+    .btnXem{
+        width: 150px;
+        height: 50px;
+        font-size: medium;
+        margin: 0px 0px 0px 20% ;
+    }
+    .eosr5 p{
+        display: none;
+    }
+    .container4{
+        padding: 20px 5% 20px 5%;
+        background-color: #abf0ff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+    }
+    .container4 h1{
+        margin-bottom: 40px;
+    }
+    .video-list{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+        justify-items: center;
+        align-items: center;
+        row-gap: 40px;
+    }
+    .video{
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto;
+        color: black;
+        grid-gap: 10px;
+        padding: 0px;
+    }
+    .video:hover{
+        background-color: #bababa9e;
+        border-radius: 5px;
+    }
+    .div-imgreview{
+        position: relative;
+    }
+    .img-review1{
+        border-radius: 5px;
+    }
+    .img-review2{
+        display: none;
+    }
+    .div-imgreview p{
+        position: absolute;
+        color: white;
+        font-size: small;
+        border-radius: 5px;
+        background-color: black;
+        padding: 5px;
+        top: 75%;
+        left: 75%;
+    }
+    .img-review1:hover ~ .img-review2,.img-review2:hover{
+        display: block;
+        position: absolute;
+        opacity: 0.5;
+        top: 25%;
+        left: 40%;
+    }
+    .review-content{
+        width: 75%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: justify;
+        font-family: 'Charis SIL';
+        margin-left: 10px;
+    }
+    .review-content h3{
+        font-size: smaller;
+        width: 100%;
+        height: 45%;
+    }
+    .review-content p, .review-content li{
+        color: rgba(128, 128, 128, 0.5);
+        font-size: smaller;
+        font-weight: 600;
+        margin-right: 10px;
+    }
+    .view-time{
+        display: none;
+    }
+    .product-list{
+        width: 90%;
+        display: grid;
+        grid-template-columns: auto;
+        margin: 30px 0 0 0;
     }
 }

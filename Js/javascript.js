@@ -109,4 +109,15 @@ var user;
             }
         
         } 
+        var menu = false;
+        function clickMenu(){
+            if(menu==false){
+               document.getElementsByClassName('menuitem')[0].style.display = "grid"; 
+               menu = true;
+            }
+            else{
+                document.getElementsByClassName('menuitem')[0].style.display = "none"; 
+               menu = false;
+            }   
+        }
             
