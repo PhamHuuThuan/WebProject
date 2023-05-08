@@ -411,6 +411,8 @@ input:focus {
 }
 .div-imgreview{
     position: relative;
+    width: 250px;
+    height: 140px;
 }
 .img-review1{
     border-radius: 5px;
@@ -481,6 +483,13 @@ input:focus {
     border: 2px solid rgb(51, 136, 249);
     box-sizing: border-box;
     border-radius: 5px;
+}
+.product-img{
+    width: 240px;
+    height: 212px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .myCart{
     z-index: 15;

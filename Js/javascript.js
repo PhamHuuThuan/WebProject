@@ -112,11 +112,11 @@ var user;
         var menu = false;
         function clickMenu(){
             if(menu==false){
-               document.getElementsByClassName('myCart')[0].style.display = "grid"; 
+               document.getElementsByClassName('menuitem')[0].style.display = "grid"; 
                menu = true;
             }
             else{
-                document.getElementsByClassName('myCart')[0].style.display = "none"; 
+                document.getElementsByClassName('menuitem')[0].style.display = "none"; 
                menu = false;
             }   
         }
@@ -161,45 +161,42 @@ var user;
         
                 startX = startY = endX = endY = null;
             });
-            const carts = document.querySelectorAll('.myCart');
-            const cart = carts[0];
-            console.log(cart);
-            const addToCartButtons = document.querySelectorAll('.btnaddcart');
-            console.log(addToCartButtons);
-            addToCartButtons.forEach(function(button) {
-                button.addEventListener('click', function(event) {
-                    const clickedButton = event.target;
-                    const product = clickedButton.closest('.products');
-                    const productImage = product.querySelector('.product-img img').src;
-                    const productName = product.querySelector('.name-price h3').textContent;
-                    const productPrice = product.querySelector('.name-price h4').textContent;
-                    console.log(button);
+            // const carts = document.querySelectorAll('.myCart');
+            // const cart = carts[0];
+            // const addToCartButtons = document.querySelectorAll('.btnaddcart');
+            // addToCartButtons.forEach(function(button) {
+            //     button.addEventListener('click', function(event) {
+            //         const clickedButton = event.target;
+            //         const product = clickedButton.closest('.products');
+            //         const productImage = product.querySelector('.product-img img').src;
+            //         const productName = product.querySelector('.name-price h3').textContent;
+            //         const productPrice = product.querySelector('.name-price h4').textContent;
 
-                    const cartItem = document.createElement('div');
-                    cartItem.classList.add('cart-item');
+            //         const cartItem = document.createElement('div');
+            //         cartItem.classList.add('cart-item');
 
-                    const cartItemImage = document.createElement('img');
-                    cartItemImage.src = productImage;
-                    cartItem.appendChild(cartItemImage);
+            //         const cartItemImage = document.createElement('img');
+            //         cartItemImage.src = productImage;
+            //         cartItem.appendChild(cartItemImage);
 
-                    const cartItemName = document.createElement('span');
-                    cartItemName.textContent = productName;
-                    cartItem.appendChild(cartItemName);
+            //         const cartItemName = document.createElement('span');
+            //         cartItemName.textContent = productName;
+            //         cartItem.appendChild(cartItemName);
 
-                    const cartItemPrice = document.createElement('span');
-                    cartItemPrice.textContent = productPrice;
-                    cartItem.appendChild(cartItemPrice);
+            //         const cartItemPrice = document.createElement('span');
+            //         cartItemPrice.textContent = productPrice;
+            //         cartItem.appendChild(cartItemPrice);
 
-                    const deleteButton = document.createElement('button');
-                    deleteButton.textContent = 'Delete';
-                    deleteButton.addEventListener('click', function() {
-                    // code to remove item from cart
-                    cartItem.remove();
-                    });
-                    cartItem.appendChild(deleteButton);
+            //         const deleteButton = document.createElement('button');
+            //         deleteButton.textContent = 'Delete';
+            //         deleteButton.addEventListener('click', function() {
+            //         // code to remove item from cart
+            //         cartItem.remove();
+            //         });
+            //         cartItem.appendChild(deleteButton);
 
-                    cart.appendChild(cartItem);
-                });
-            });
+            //         cart.appendChild(cartItem);
+            //     });
+            // });
         });
         

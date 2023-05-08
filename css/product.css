@@ -280,6 +280,11 @@ input[type=checkbox]{
     border: 3px solid rgb(225, 96, 96);
 }
 .product-img{
+    width: 240px;
+    height: 212px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 10px;
 }
 .product-rating{
