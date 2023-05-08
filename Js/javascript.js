@@ -19,6 +19,95 @@ $(document).ready(function() {
             alert('Thông tin tài khoản hoặc mật khẩu chưa chính xác!');
         }
     });
+    const updateTotal = () => {
+        let total = 0;
+        $('.cart-box').each(function() {
+          const price = parseFloat($(this).find('.cart-price').text().replace('$', ''));
+          const quantity = parseInt($(this).find('.cart-quantity').val());
+          total += price * quantity;
+        });
+        $('.total').text(`$${total.toFixed(2)}`);
+      };
+    //remove product from cart
+    $(document).on('click', '.cart-remove', function() {
+        const productName = $(this).parent().find('.cart-product-title').text();
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart = cart.filter(item => item.name !== productName);
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        $(this).parent().remove();
+
+        updateTotal();
+      });
+
+    //add product to cart
+    $('.btnaddcart').on('click', function() {
+        const product = $(this).closest('.products');
+        const productImage = product.find('.product-img img').attr('src');
+        const productName = product.find('.name-price h3').text();
+        const productPrice = product.find('.name-price h4').text();
+        
+        const cartItem = {
+            image: productImage,
+            name: productName,
+            price: productPrice
+          };
+      
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(cartItem);
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        const cartBox = $('<div></div>');
+        cartBox.addClass('cart-box');
+        cartBox.html(`
+          <img src="${productImage}" alt="" class="img-cart">
+          <div class="detail-box">
+            <div class="cart-product-title">${productName}</div>
+            <div class="cart-price">${productPrice}</div>
+            <input type="number" value="1" class="cart-quantity">
+          </div>
+          <img src="img/trash.png" class="cart-remove">
+        `);
+        $('.cart-content').append(cartBox);
+
+        updateTotal();
+      });
+
+      //load du lieu tu local
+      const loadCart = () => {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.forEach(item => {
+          const cartBox = $('<div></div>');
+          cartBox.addClass('cart-box');
+          cartBox.html(`
+            <img src="${item.image}" alt="" class="img-cart">
+            <div class="detail-box">
+              <div class="cart-product-title">${item.name}</div>
+              <div class="cart-price">${item.price}</div>
+              <input type="number" value="1" class="cart-quantity">
+            </div>
+            <img src="img/trash.png" class="cart-remove">
+          `);
+          $('.cart-content').append(cartBox);
+        });
+        updateTotal();
+      };
+    
+      loadCart();
+
+      //update total when change quantity
+      $(document).on('input', '.cart-quantity', function() {
+        updateTotal();
+      });
+
+      //rang buoc quantity la 1 neu khong nhap du lieu
+      $(document).on('blur', '.cart-quantity', function() {
+        if ($(this).val() === '' || $(this).val()<= 0) {
+          $(this).val(1);
+          updateTotal();
+        }
+      });
+
 }); 
 function User(userName, email, pass, phonNB){
     this.userName = userName;
@@ -120,16 +209,9 @@ var user;
                menu = false;
             }   
         }
-        var cartDisplay = false;
         function clickCart(){
-            if(cartDisplay==false){
-               document.getElementsByClassName('myCart')[0].style.display = "grid"; 
-               cartDisplay = true;
-            }
-            else{
-                document.getElementsByClassName('myCart')[0].style.display = "none"; 
-                cartDisplay = false;
-            }   
+            const cart = document.querySelector('.myCart');
+            cart.classList.toggle('show');
         }
         document.addEventListener('DOMContentLoaded', function() {
             var startX, startY, endX, endY;
@@ -161,42 +243,4 @@ var user;
         
                 startX = startY = endX = endY = null;
             });
-            // const carts = document.querySelectorAll('.myCart');
-            // const cart = carts[0];
-            // const addToCartButtons = document.querySelectorAll('.btnaddcart');
-            // addToCartButtons.forEach(function(button) {
-            //     button.addEventListener('click', function(event) {
-            //         const clickedButton = event.target;
-            //         const product = clickedButton.closest('.products');
-            //         const productImage = product.querySelector('.product-img img').src;
-            //         const productName = product.querySelector('.name-price h3').textContent;
-            //         const productPrice = product.querySelector('.name-price h4').textContent;
-
-            //         const cartItem = document.createElement('div');
-            //         cartItem.classList.add('cart-item');
-
-            //         const cartItemImage = document.createElement('img');
-            //         cartItemImage.src = productImage;
-            //         cartItem.appendChild(cartItemImage);
-
-            //         const cartItemName = document.createElement('span');
-            //         cartItemName.textContent = productName;
-            //         cartItem.appendChild(cartItemName);
-
-            //         const cartItemPrice = document.createElement('span');
-            //         cartItemPrice.textContent = productPrice;
-            //         cartItem.appendChild(cartItemPrice);
-
-            //         const deleteButton = document.createElement('button');
-            //         deleteButton.textContent = 'Delete';
-            //         deleteButton.addEventListener('click', function() {
-            //         // code to remove item from cart
-            //         cartItem.remove();
-            //         });
-            //         cartItem.appendChild(deleteButton);
-
-            //         cart.appendChild(cartItem);
-            //     });
-            // });
-        });
-        
+});

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/Home.css">
+    <script src="Js/jquery-3.6.4.min.js"></script>
     <link rel="shortcut icon" type="image/png" href="/img/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,7 +48,7 @@
                     </form>
                     <div class="user">
                         <a href="Login.html"><img src="img/user.png" width="32px" height="auto"></a>
-                        <div href=""  onclick="clickCart()"><img src="img/add-to-cart.png" width="32px" height="auto"></div>
+                        <div id="btncart" href=""  onclick="clickCart()"><img src="img/add-to-cart.png" width="32px" height="auto"></div>
                     </div>
                 </div>
                 <div class="title">
@@ -356,7 +357,23 @@
             </div>
         </div>
         <div class="myCart">
-            
+            <div class="title-cart">
+                Your Cart
+            </div>
+            <div class="cart-content">
+            </div>
+            <div class="cart-total">
+                <h2>Total</h2>
+                <p class="total">0$</p>
+            </div>
+            <div class="btn-carts">
+                <div class="btn-Buy">
+                    Buy Now
+                </div>
+                <div class="btn-close" onclick="clickCart()">
+                    Close
+                </div>
+            </div>
         </div>
     </div>
     <script src="Js/javascript.js"></script>
