@@ -14,7 +14,7 @@ $(document).ready(function() {
     $('#btnLogin').click(function () { 
         var user = JSON.parse(localStorage.getItem('user'));
         if(document.getElementById("mail").value===user.email && document.getElementById("pass").value===user.pass){
-            window.location.href = 'index.html';
+            window.location.href = 'adminpage.html';
         }else{
             alert('Thông tin tài khoản hoặc mật khẩu chưa chính xác!');
         }
