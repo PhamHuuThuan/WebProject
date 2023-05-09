@@ -41,7 +41,7 @@ $(document).ready(function() {
       });
 
     //add product to cart
-    $('.btnaddcart').on('click', function() {
+    $(document).on('click', '.btnaddcart', function() {
         const product = $(this).closest('.products');
         const productImage = product.find('.product-img img').attr('src');
         const productName = product.find('.name-price h3').text();
@@ -244,3 +244,72 @@ var user;
                 startX = startY = endX = endY = null;
             });
 });
+fetch('/Json/productList.json')
+  .then(response => response.json())
+  .then(data => {
+    // Loop through the data and create an HTML element for each item
+    for (let i = 0; i < 4 && i < data.length; i++) {
+        const item = data[i];
+        // Create a new div element for the product
+        const productDiv = document.createElement('div');
+        productDiv.classList.add('products');
+
+        // Add the product image
+        const productImgDiv = document.createElement('div');
+        productImgDiv.classList.add('product-img');
+        const productImg = document.createElement('img');
+        productImg.src = item.linkProduct;
+        productImgDiv.appendChild(productImg);
+        productDiv.appendChild(productImgDiv);
+
+        // Add the product rating
+        const productRatingDiv = document.createElement('div');
+        productRatingDiv.classList.add('product-rating');
+        const ratingDiv = document.createElement('div');
+        const ratingImg = document.createElement('img');
+        ratingImg.src = `img/Rating${item.review}.png`;
+        ratingDiv.appendChild(ratingImg);
+        const ratingP = document.createElement('p');
+        ratingP.textContent = `(${item.quantityReview} đánh giá)`;
+        productRatingDiv.appendChild(ratingDiv);
+        productRatingDiv.appendChild(ratingP);
+        productDiv.appendChild(productRatingDiv);
+
+        // Add the product name and price
+        const namePriceDiv = document.createElement('div');
+        namePriceDiv.classList.add('name-price');
+        const nameH3 = document.createElement('h3');
+        nameH3.textContent = item.cameraName;
+        const priceH4 = document.createElement('h4');
+        priceH4.textContent = `$${item.price}`;
+        namePriceDiv.appendChild(nameH3);
+        namePriceDiv.appendChild(priceH4);
+        productDiv.appendChild(namePriceDiv);
+
+        // Add the buttons
+        const buttonAddSeeDiv = document.createElement('div');
+        buttonAddSeeDiv.classList.add('button-add-see');
+        const btnSeeA = document.createElement('a');
+        btnSeeA.classList.add('btnsee');
+        btnSeeA.href = '#';
+        btnSeeA.onclick = event => event.preventDefault();
+        const btnSeeImg = document.createElement('img');
+        btnSeeImg.src = 'img/more.png';
+        btnSeeA.appendChild(btnSeeImg);
+        const btnSeeText = document.createTextNode('See more');
+        btnSeeA.appendChild(btnSeeText);
+        buttonAddSeeDiv.appendChild(btnSeeA);
+        const btnAddCartButton = document.createElement('button');
+        btnAddCartButton.classList.add('btnaddcart');
+        const btnAddCartImg = document.createElement('img');
+        btnAddCartImg.src = 'img/add.png';
+        btnAddCartButton.appendChild(btnAddCartImg);
+        const btnAddCartText = document.createTextNode('Add');
+        btnAddCartButton.appendChild(btnAddCartText);
+        buttonAddSeeDiv.appendChild(btnAddCartButton);
+        productDiv.appendChild(buttonAddSeeDiv);
+
+        // Add the product to the page
+        document.getElementsByClassName('product-list')[0].appendChild(productDiv);
+    };
+  });
