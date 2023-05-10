@@ -244,11 +244,16 @@ var user;
                 startX = startY = endX = endY = null;
             });
 });
+let maxProducts = 12;
+if(document.getElementsByClassName("product-list")[0]){
+    maxProducts = parseInt(document.getElementsByClassName("product-list")[0].getAttribute("data-max-products"));
+}
+    
 fetch('/Json/productList.json')
   .then(response => response.json())
   .then(data => {
     // Loop through the data and create an HTML element for each item
-    for (let i = 0; i < 4 && i < data.length; i++) {
+    for (let i = 0; i < maxProducts && i < data.length; i++) {
         const item = data[i];
         // Create a new div element for the product
         const productDiv = document.createElement('div');
@@ -292,7 +297,10 @@ fetch('/Json/productList.json')
         const btnSeeA = document.createElement('a');
         btnSeeA.classList.add('btnsee');
         btnSeeA.href = '#';
-        btnSeeA.onclick = event => event.preventDefault();
+        btnSeeA.onclick = event => {
+            event.preventDefault();
+            event.stopPropagation();
+        };
         const btnSeeImg = document.createElement('img');
         btnSeeImg.src = 'img/more.png';
         btnSeeA.appendChild(btnSeeImg);
@@ -311,5 +319,10 @@ fetch('/Json/productList.json')
 
         // Add the product to the page
         document.getElementsByClassName('product-list')[0].appendChild(productDiv);
+        
+        if(maxProducts===12){
+            var productDivClone = productDiv.cloneNode(true);
+            document.getElementsByClassName('product-list')[1].appendChild(productDivClone);
+        }    
     };
-  });
+});
