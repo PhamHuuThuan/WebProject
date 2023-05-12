@@ -188,7 +188,7 @@ input:focus {
     -webkit-text-fill-color: transparent;
 }
 .container2 li{
-    list-style-image: url(/img/solutions.png);
+    list-style-image: url(img/solutions.png);
     float: left;
     font-style: italic;
     margin-left: 50px;
