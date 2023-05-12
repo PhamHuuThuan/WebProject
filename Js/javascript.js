@@ -251,7 +251,7 @@ if(document.getElementsByClassName("product-list")[0]){
     maxProducts = parseInt(document.getElementsByClassName("product-list")[0].getAttribute("data-max-products"));
 }
     
-fetch('/Json/productList.json')
+fetch('../Json/productList.json')
   .then(response => response.json())
   .then(data => {
     // Loop through the data and create an HTML element for each item
