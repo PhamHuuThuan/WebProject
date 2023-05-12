@@ -76,7 +76,7 @@ switchMode.addEventListener('change', function () {
 })
 
 //get du lieu todos tu api len giao dien
-const linkToDos = '../Json/todos.json';
+const linkToDos = '../../Json/todos.json';
 fetch(linkToDos)
     .then(function(response){
         return response.json();
@@ -98,7 +98,7 @@ fetch(linkToDos)
     });
 
 //get du lieu order tu file orderlist
-const linkOrderList = '../Json/orderList.json';
+const linkOrderList = '../../Json/orderList.json';
 fetch(linkOrderList)
     .then(function(response){
         return response.json();
