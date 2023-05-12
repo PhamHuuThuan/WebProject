@@ -71,6 +71,8 @@ $(document).ready(function() {
         $('.cart-content').append(cartBox);
 
         updateTotal();
+
+        alert('Đã thêm sản phẩm vào giỏ hàng');
       });
 
       //load du lieu tu local
